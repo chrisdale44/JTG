@@ -1,0 +1,199 @@
+html {
+	margin:				0px;
+	padding:			0px;
+	height:				100%;
+}
+
+body {
+	font-size:			13px;
+	font-family: 		"Century Gothic";
+	color: 				#000000;
+	margin:				0px;
+	padding:			0px;
+	background: 		url("../images/gradient.jpg") repeat-x #FFF;
+	width:				850px;
+	margin-right:		auto;
+	margin-left:		auto;
+}
+
+* html body{
+	height:				100%;
+	margin:				0px;
+	padding:			0px;
+}
+
+/*-----------Headings------------*/
+
+h1{
+	margin:				0px;
+	padding:			0px;
+	padding-top:		4px;
+	text-align:			center;
+	color:				#000000;
+	font-size:			60px;
+	font-weight:		normal;
+	text-transform: 	uppercase;
+}
+
+h2{
+	margin:				0px;
+	padding:			0px;
+	font-size:			32px;
+	color:				#000000;
+	text-align: 		center;
+	font-weight:		bold;
+	text-transform: 	uppercase;
+}
+
+h3 {
+	margin:				0px;
+	padding:			0px;
+	font-size:			15px;
+	color:				#000000;
+	font-weight:		bold;
+
+}
+
+p{
+	margin:				0px;
+	padding:			0px;
+	color:				#000000;
+	line-height: 		20px;
+	font-size:			14px;
+}
+
+img {
+	border:				none;
+}
+
+.input_form {
+	margin:				0px;
+	padding:			0px;
+	margin-right:		auto;
+	margin-left:		auto;
+}
+
+input[type="text"] {
+	height:				26px;
+	width:				200px;
+	border:				1px solid #909090;
+	font-family:		"Century Gothic";
+	font-size:			13px;
+	margin-left:		2px;
+}
+
+input[type="password"] {
+	height:				26px;
+	width:				200px;
+	border:				1px solid #909090;
+	font-family:		"Century Gothic";
+	font-size:			13px;
+	margin-left:		2px;
+}
+
+input[type="submit"] {
+	height:				24px;
+	border:				1px solid #909090;
+	font-family:		"Century Gothic";
+	font-size:			14px;
+}
+
+input[type="file"] {
+	height:				24px;
+	font-family:		"Century Gothic";
+	font-size:			14px;
+}
+
+textarea {
+	border:				1px solid #909090;
+	font-family:		"Century Gothic";
+	font-size:			14px;
+}
+
+select {
+	border:				1px solid #909090;
+	font-family:		"Century Gothic";
+	font-size:			14px;
+}
+
+
+a{
+	padding:			0px;
+	margin:				0px;
+	text-decoration:	none;
+	color:				#000000;
+}
+
+a:hover {
+	color:				#505050;
+}
+
+a:active {
+  outline:				none; /* get rid of those system borders being generated for A tags */
+}
+
+:focus {
+  -moz-outline-style:none;
+}
+
+.tbl_artwork {
+	width:				auto;
+	text-align:			center;
+	margin-right:		auto;
+	margin-left:		auto;
+}
+
+.tbl_artwork td {
+	padding:			10px;
+	border-width:		1px;
+	border-style:		solid;
+	border-color:		#999999;
+	
+}
+
+.tbl_contact {
+	text-align:			left;
+	margin-right:		auto;
+	margin-left:		auto;
+}
+
+.tbl_change_pass {
+	text-align:			left;
+	margin-left:		auto; 
+	margin-right:		auto;
+}
+
+/*-------------- Div -----------------*/
+
+#logout {
+	position: 			absolute;
+	top:				40px;
+	margin-left:		650px;
+}
+
+#logout a {
+	color:				#101010;
+	font-size:			18px;
+}
+
+#logout a:hover {
+	text-decoration:	underline;
+}
+
+#content {
+	margin:				0px;
+	padding:			0px;
+	width:				auto;
+	margin-top:			20px;
+}
+
+#errors {
+	position:			absolute; 
+	margin:				0px;
+	padding:			0px;
+}
+
+#errors p {
+	color:				#FF0000;
+	text-align:			center;
+}

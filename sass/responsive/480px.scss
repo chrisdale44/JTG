@@ -1,0 +1,26 @@
+/* 480px and greater */
+@media only screen and (min-width: 480px) {
+	.header {
+		h1 {
+			font-size: 2em;
+		}
+	}
+	h2 {
+		&.title-desktop {
+			display: block;
+		}
+		&.title-mobile {
+			display: none;
+		}
+	}
+	.contact {
+		font-size:1.2em;
+	}
+	.artistNav {
+		width: auto;
+	}
+
+	.img-grid-container {
+		width: auto;
+	}
+}

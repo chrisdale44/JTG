@@ -1,0 +1,32 @@
+/* 1px and greater */
+@media only screen and (min-width: 1px) {
+	.header {
+		h1 {
+			font-size: 1.4em;
+		}
+	}
+	.contact {
+		font-size: 1.1em;
+	}
+	.tile {
+		width: 49.5%;
+		.title {
+			font-size: 1.1em
+		}
+	}
+	h2 {
+		&.title-desktop {
+			display: none;
+		}
+		&.title-mobile {
+			display: block;
+		}
+	}
+	.artistNav {
+		width: 100%;
+	}
+
+	.img-grid-container {
+		width: 100%;
+	}
+}
