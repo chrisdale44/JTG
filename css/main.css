@@ -6621,18 +6621,6 @@ img.artwork-medium {
 @font-face {
   font-family: josefinSansSemiBoldItalic;
   src: url("../fonts/JosefinSans/JosefinSans-SemiBoldItalic.ttf"); }
-@font-face {
-  font-family: merriweatherLight;
-  src: url("../fonts/merriweather/Merriweather_Light.ttf"); }
-@font-face {
-  font-family: merriweatherBold;
-  src: url("../fonts/merriweather/Merriweather-Bold.ttf"); }
-@font-face {
-  font-family: merriweatherRegular;
-  src: url("../fonts/merriweather/Merriweather-Regular.ttf"); }
-@font-face {
-  font-family: merriweatherLightItalic;
-  src: url("../fonts/merriweather/Merriweather-LightItalic.ttf"); }
 /* 1px and greater */
 @media only screen and (min-width: 1px) {
   .header h1 {
