@@ -11,7 +11,7 @@ class Artist_Model {
     			surname,
     			bio
     		FROM artists
-    		WHERE artistID='$artistId'
+    		WHERE artistId='$artistId'
     	");
     	return $artistResult;
     }
@@ -32,7 +32,7 @@ class Artist_Model {
         		SET forename='$forename', 
         			surname='$surname', 
         			bio='$bio' 
-        		WHERE artistID='$artistId'
+        		WHERE artistId='$artistId'
     	");
     	return $updateResult;
     }
@@ -41,7 +41,7 @@ class Artist_Model {
         $deleteResult = mysqli_query($con, "
             DELETE 
                 FROM artists
-                WHERE artistID='$artistId'
+                WHERE artistId='$artistId'
         ");
         return $deleteResult;
     }

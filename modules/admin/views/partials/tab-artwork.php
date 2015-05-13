@@ -33,7 +33,7 @@
 			<?= $row['forename'] ?> <?= $row['surname'] ?>
 		</td>
 		<td>
-			<img src="/fine_art_prints/images/artwork/<?= $row['image'] ?>" alt="<?= $row['title'] ?> by <?= $row['forename'] ?> <?= $row['surname'] ?>" class="artwork-small" />
+			<img src="/images/artwork/<?= $row['image'] ?>" alt="<?= $row['title'] ?> by <?= $row['forename'] ?> <?= $row['surname'] ?>" class="artwork-small" />
 		</td>
 		<td>
 			<?= $row['title'] ?>
@@ -45,13 +45,13 @@
 			<?= substr($row['description'], 0, 30) ?><? if(strlen($row['description']) > 30) : ?>...<? endif; ?>
 		</td>
 		<td>
-			<a href="index.php?admin&amp;p=dash&amp;method=toggle&amp;id=<?= $row['artID'] ?>&amp;bool=<?= $row['live'] ?>"><?= $data['bool'][$row['live']] ?></a>
+			<a href="index.php?admin&amp;p=dash&amp;method=toggle&amp;id=<?= $row['artId'] ?>&amp;bool=<?= $row['live'] ?>"><?= $data['bool'][$row['live']] ?></a>
 		</td>
 		<td>
-			<a href="index.php?admin&amp;p=artwork&amp;id=<?= $row['artID'] ?>">Edit</a>
+			<a href="index.php?admin&amp;p=artwork&amp;id=<?= $row['artId'] ?>">Edit</a>
 		</td>
 		<td>
-			<a href="index.php?admin&amp;p=dash&amp;method=delart&amp;id=<?= $row['artID'] ?>">Delete</a>
+			<a href="index.php?admin&amp;p=dash&amp;method=delart&amp;id=<?= $row['artId'] ?>">Delete</a>
 		</td>
 	</tr>
 <? endwhile; ?>

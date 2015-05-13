@@ -7,11 +7,7 @@ class Artist_Controller
 
     public function main($con, array $getVars) {
         // check if user is logged in
-    	if (!isset($_SESSION['fap'])) {
-            session_start();
-            session_destroy();
-            header('Location: index.php?admin');
-        }
+    	require_once('php/check_session.php');
         require_once('php/messages.php');
 
         $artistModel = new Artist_Model;

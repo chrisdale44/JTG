@@ -8,7 +8,7 @@ class Login_Model
 
     public function get_password($con, $username) {
         //Sanitize
-        $username = mysql_real_escape_string($username);
+        $username = mysqli_real_escape_string($con, $username);
         $passwordResult = mysqli_query($con, "
     			SELECT password 
     				FROM admin

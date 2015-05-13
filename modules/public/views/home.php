@@ -1,30 +1,35 @@
 <!-- artist navigation bar -->
 <ul class="artistNav">
 	<li>
-		<a href="#" data-filter="*" class="selected">
+		<a href="javascript:void(0);" data-filter="*" class="selected">
 			View All
 		</a>
 	</li>
-	<? foreach ($data['artists'] as $key => $row) : ?>
+	<? if (mysqli_num_rows($data['artists'])) :
+		while ($row = mysqli_fetch_array($data['artists'])) : ?>
 	<li>
-		<a href="#" data-filter=".<?= $row['artistID'] ?>">
+		<a href="javascript:void(0);" data-filter=".<?= $row['artistId'] ?>">
 			<?= $row["forename"] ?> <?= $row["surname"] ?>
 		</a>
 	</li>
-	<? endforeach; ?>
+	<? endwhile;
+	endif; ?>
 </ul>
 
 <!-- image grid of artwork -->
 <div class="img-grid-container">
-	<? foreach ($data['artwork'] as $key => $row) : ?>
-		<div class="tile <?= $row['artistID'] ?> animated">
-			<a href="/fine_art_prints/images/artwork/<?= strtolower($row['image']) ?>" class="img-container" data-rel="lightcase">
-				<img src="/fine_art_prints/images/artwork/<?= strtolower($row['image']) ?>" 
+	<? if (mysqli_num_rows($data['artwork'])) : 
+		while ($row = mysqli_fetch_array($data['artwork'])) : ?>
+		<div class="tile <?= $row['artistId'] ?> animated">
+			<a href="/images/artwork/<?= $row['image'] ?>" class="img-container" data-rel="lightcase">
+				<img src="/images/artwork/<?= $row['image'] ?>" 
 					alt="<?= $row["title"] ?> by <?= $row["forename"] ?> <?= $row["surname"] ?>" />
-				<div class="title">
-					<?= $row["title"] ?> by <?= $row["forename"] ?> <?= $row["surname"] ?>
-				</div>
 			</a>			
+			<div class="art-info">
+				<a href="javascript:void(0);" class="artist" data-filter=".<?= $row['artistId'] ?>"><?= $row["forename"] ?> <?= $row["surname"] ?></a>
+				<a href="/images/artwork/<?= $row['image'] ?>" class="title" data-rel="lightcase"><?= $row["title"] ?></a>
+			</div>
 		</div>
-	<? endforeach; ?>
+	<? endwhile; 
+	endif; ?>
 </div>

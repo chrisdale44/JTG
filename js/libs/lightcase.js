@@ -178,7 +178,7 @@
 				title : lightcase.settings.title || $object.attr('title'),
 				caption : lightcase.settings.caption || $object.children('img').attr('alt'),
 				contact : '<p class="' + lightcase.settings.classPrefix + 'contact">Interested in purchasing a copy of this piece?</p>\
-							<a href="index.php?contact" class="button ' + lightcase.settings.classPrefix + 'button">Contact Jeff Taylor</a>',
+							Call or email us on the following...',
 				url : lightcase.verifyDataUrl($object.attr('data-href') || $object.attr('href')),
 				requestType : lightcase.settings.ajax.type,
 				requestData : lightcase.settings.ajax.data,

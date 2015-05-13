@@ -1,7 +1,10 @@
 <?
+
 // Define Root vars
-define('SERVER_ROOT' , '/Applications/MAMP/htdocs/fine_art_prints');
-define('SITE_ROOT' , 'http://localhost:8888/fine_art_prints');
+define('SERVER_ROOT' , '.');
+define('SITE_ROOT' , '__DIR__');
+// define('SERVER_ROOT' , '/Applications/MAMP/htdocs/jtg');
+// define('SITE_ROOT' , 'http://localhost:8888/jtg');
 
 // Connect to the database
 require_once (SERVER_ROOT . '/db/connect.php');

@@ -17,7 +17,7 @@ class Dash_Model {
     	$artworkResult = mysqli_query($con, "
 			SELECT * 
 				FROM art, artists
-			WHERE artists.artistID = art.artistID 
+			WHERE artists.artistId = art.artistId
 			ORDER BY 
 				surname ASC, 
 				title ASC

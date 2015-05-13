@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 class Login_Controller
 {
@@ -51,7 +52,7 @@ class Login_Controller
 	    }
 
 	    //select password of matching username from database
-	    $passwordResult = $loginModel->get_password($con, $username, $password);
+	    $passwordResult = $loginModel->get_password($con, $username);
 
 	    if ($row = mysqli_fetch_assoc($passwordResult)) {
 	    	// username exists, now check if password is correct
@@ -65,8 +66,7 @@ class Login_Controller
 
 			if ($password_db === $hashed_password) {
 				// Successful login
-				session_start();
-				$_SESSION['fap']=time();
+				$_SESSION['fap'] = $username;
 				return true;
 			} else {
 				return false;

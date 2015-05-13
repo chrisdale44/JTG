@@ -24,10 +24,10 @@
 			<?= substr($row['bio'], 0, 30) ?><? if(strlen($row['bio']) > 30) : ?>...<? endif; ?>
 		</td>
 		<td>
-			<a href="index.php?admin&amp;p=artist&amp;id=<?= $row['artistID'] ?>">Edit</a>
+			<a href="index.php?admin&amp;p=artist&amp;id=<?= $row['artistId'] ?>">Edit</a>
 		</td>
 		<td>
-			<a href="index.php?admin&amp;p=dash&amp;method=delartist&amp;id=<?= $row['artistID'] ?>">Delete</a>
+			<a href="index.php?admin&amp;p=dash&amp;method=delartist&amp;id=<?= $row['artistId'] ?>">Delete</a>
 		</td>
 	</tr>
 <? endwhile; ?>

@@ -8,10 +8,10 @@ class Home_Model
 
     public function get_all_artists_names($con) {
         $artistsResult = mysqli_query($con, "
-            SELECT artists.artistID, artists.forename, artists.surname 
+            SELECT artists.artistId, artists.forename, artists.surname 
                 FROM artists 
-                WHERE artistID IN (
-                    SELECT DISTINCT art.artistID 
+                WHERE artistId IN (
+                    SELECT DISTINCT art.artistId 
                         FROM art 
                         WHERE live=1) 
                 ORDER BY artists.surname ASC
@@ -24,7 +24,7 @@ class Home_Model
             SELECT * 
                 FROM art, artists
                 WHERE art.live = 1
-                AND art.artistID = artists.artistID
+                AND art.artistId = artists.artistId
             ORDER BY artists.surname ASC, art.title ASC
             ");
         return $artworkResult;

@@ -6,11 +6,8 @@ class Dash_Controller
     public $content_file = 'dash';
 
     public function main($con, array $getVars) {
-
         // check if user is logged in
-    	if (!isset($_SESSION['fap'])) {
-            $this->logout;
-        }
+    	require_once('php/check_session.php');
         require_once('php/messages.php');
 
         // dash model

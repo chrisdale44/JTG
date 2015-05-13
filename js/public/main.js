@@ -7,17 +7,16 @@ $(document).ready(function($) {
       // options
       itemSelector: '.tile',
       resizable: false,
-      masonry: {
-      }
+      //layoutMode: 'fitRows',
     });
   });
 
   // filter tiles using isotope
-  $('.artistNav').on( 'click', 'a', function() {
+  $('.artistNav, .art-info').on( 'click', 'a', function() {
     var filterValue = $(this).attr('data-filter');
     container.isotope({ filter: filterValue });
     $('.artistNav a').removeClass('selected');
-    $(this).addClass('selected');
+    $('.artistNav a[data-filter="' + filterValue + '"]').addClass('selected');
   });
 
   // init lightcase

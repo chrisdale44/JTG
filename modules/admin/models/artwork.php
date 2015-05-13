@@ -8,8 +8,8 @@ class Artwork_Model {
     	$artworkResult = mysqli_query($con, "
     		SELECT *
 	    		FROM art, artists
-	    		WHERE artID='$artworkId'
-	    		AND artists.artistID=art.artistID
+	    		WHERE artId='$artworkId'
+	    		AND artists.artistId=art.artistId
     	");
     	return $artworkResult;
     }
@@ -17,7 +17,7 @@ class Artwork_Model {
     public function insert_artwork($con, $artistId, $title, $year, $desc, $file_name_ext) {
     	$artworkResult = mysqli_query($con, "
     		INSERT INTO art 
-    		SET artistID='$artistId', 
+    		SET artistId='$artistId', 
     			title='$title',
     			year='$year', 
     			description='$desc',
@@ -30,21 +30,21 @@ class Artwork_Model {
     	if($file_name_ext) {
 	    	$artworkResult = mysqli_query($con, "
 	    		UPDATE art 
-		    		SET artistID='$artistId', 
+		    		SET artistId='$artistId', 
 		    			title='$title',
 		    			year='$year', 
 		    			description='$desc',
 		    			image='$file_name_ext'
-		    		WHERE artID='$artworkId'
+		    		WHERE artId='$artworkId'
 	    		");
 	    } else {
 	    	$artworkResult = mysqli_query($con, "
 	    	UPDATE art 
-		    		SET artistID='$artistId', 
+		    		SET artistId='$artistId', 
 		    			title='$title',
 		    			year='$year', 
 		    			description='$desc'
-		    		WHERE artID='$artworkId'
+		    		WHERE artId='$artworkId'
 	    		");
 	    }
 		return $artworkResult;
@@ -54,7 +54,7 @@ class Artwork_Model {
     	$artworkResult = mysqli_query($con, "
 	    	UPDATE art 
 	    		SET live='$bool'
-	    		WHERE artID='$artworkId'
+	    		WHERE artId='$artworkId'
     		");
 		return $artworkResult;
     }
@@ -63,7 +63,7 @@ class Artwork_Model {
     	$urlResult = mysqli_query($con, "
     		SELECT image
     			FROM art
-    			WHERE artID='$artworkId'
+    			WHERE artId='$artworkId'
     		");
     	return $urlResult;
     }
@@ -72,7 +72,7 @@ class Artwork_Model {
 		$deleteResult = mysqli_query($con, "
 			DELETE 
 				FROM art 
-				WHERE artID='$artworkId'
+				WHERE artId='$artworkId'
 		");
 		return $deleteResult;
     }

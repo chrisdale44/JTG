@@ -8,15 +8,11 @@ class Artwork_Controller
 
     public function main($con, array $getVars) {
         // check if user is logged in
-    	if (!isset($_SESSION['fap'])) {
-            session_start();
-            session_destroy();
-            header('Location: index.php?admin');
-        }
+    	require_once('php/check_session.php');
     	require_once('php/messages.php');
 
         $artworkModel = new Artwork_Model;
-        $dashModel = new Dash_Model;
+        //$dashModel = new Dash_Model;
           
         //create a new view and pass it our template
         $view = new View_Model($this->content_file);
@@ -38,7 +34,7 @@ class Artwork_Controller
         }
 
         // get artist names for drop down
-        $artists = $dashModel->get_all_artists($con);
+        $artists = Dash_Model::get_all_artists($con);
         $view->assign('artists', $artists);
     }
 
@@ -46,7 +42,7 @@ class Artwork_Controller
         $artworkModel = new Artwork_Model;
 
         // Get posted variables
-        $artistId = $_POST['artist'];
+        $artistId = $_POST['artist']; 
         
         if (!empty($_POST['title'])) {
             $title = $_POST['title'];
@@ -74,7 +70,6 @@ class Artwork_Controller
                 header('Location: index.php?admin&p=artwork&error='.$return);
                 return false;
             }
-
             if($artworkModel->insert_artwork($con, $artistId, $title, $year, $desc, $this->file_name_ext)) {
                 // Success
                 header('Location: index.php?admin&p=dash&success=0');
