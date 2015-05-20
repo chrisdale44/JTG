@@ -8,7 +8,7 @@ class Home_Model
 
     public function get_all_artists_names($con) {
         $artistsResult = mysqli_query($con, "
-            SELECT artists.artistId, artists.forename, artists.surname 
+            SELECT artists.artistId, artists.forename, artists.surname, artists.bio 
                 FROM artists 
                 WHERE artistId IN (
                     SELECT DISTINCT art.artistId 

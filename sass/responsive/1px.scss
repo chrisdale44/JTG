@@ -1,32 +1,59 @@
 /* 1px and greater */
 @media only screen and (min-width: 1px) {
 	.header {
-		h1 {
-			font-size: 1.4em;
+		margin-bottom: 0;
+		.site-heading {
+			h1 {
+				font-size: 2.2em;
+			}
+			h3 {
+				font-size: 1em;
+				padding: 0 0 10px 20px;
+			}
+		}
+		.contact {
+			font-size: 1.3em;
+			margin: 10px 20px 10px 0;
 		}
 	}
-	.contact {
-		font-size: 1.1em;
-	}
-	.tile {
-		width: 49.5%;
-		.title {
-			font-size: 1.1em
+	.filterNav {
+		margin:0 0 10px 0;
+		padding:0;
+		float: none;
+		width: 100%;
+		max-height: 2em;
+		@include transition-property(max-height);
+		@include transition-duration(0.5s);
+		@include transition-timing-function(ease-in-out);
+		@include transition-delay(0s);
+		&.fixed {
+			position: fixed;
+			div.hr {
+				margin: 0 !important;
+			}
 		}
-	}
-	h2 {
-		&.title-desktop {
-			display: none;
-		}
-		&.title-mobile {
+		.mobile-menu {
 			display: block;
 		}
+		
 	}
-	.artistNav {
-		width: 100%;
+	.biographies {
+		.bio {
+			h2 {
+				margin: 20px;
+			}
+			font-size: 1.1em;
+			padding: 0 20px 20px 20px;
+		}
 	}
-
 	.img-grid-container {
 		width: 100%;
+		.tile {
+			width: 49.5%;
+			padding: 10px 20px;
+			.title {
+				font-size: 1.1em
+			}
+		}
 	}
 }

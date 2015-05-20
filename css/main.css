@@ -6432,12 +6432,12 @@ html, body {
   margin-bottom: -20px; }
 
 h2 {
+  font-family: MateSCRegular;
   text-align: center;
-  text-transform: uppercase;
-  margin: 10px 0 30px 0; }
+  margin: 0; }
 
 h3 {
-  text-transform: capitalize; }
+  font-family: josefinSansLight; }
 
 p a {
   font-size: 14px;
@@ -6484,84 +6484,116 @@ a.button {
     background-color: #eaeaea;
     color: black !important; }
 
+.hr {
+  border-bottom: 1px solid #aaa;
+  padding: 0 0 20px 0;
+  margin: 0 0 20px 0; }
+
+.widthAuto {
+  width: auto !important; }
+
 div.header {
   height: auto;
-  margin-bottom: 10px;
   overflow: auto;
-  border-bottom: 2px solid #009999; }
-  div.header h1 {
-    display: inline-block;
-    width: auto;
-    margin: 0px;
-    margin-left: 20px;
-    padding: 15px 0;
-    font-family: josefinSansSemiBold;
-    text-align: left;
-    color: black; }
-    div.header h1 a {
-      color: black; }
-      div.header h1 a:hover {
-        text-decoration: none;
-        color: black; }
+  background-color: #111;
+  background-image: -webkit-linear-gradient(#111, #444);
+  background-image: linear-gradient(#111, #444); }
+  div.header .site-heading {
+    display: inline-block; }
+    div.header .site-heading h1 {
+      width: auto;
+      margin: 0 0 0 20px;
+      padding: 10px 0 0 0;
+      font-family: MateSCRegular;
+      text-align: left;
+      color: white; }
+      div.header .site-heading h1 a {
+        color: white; }
+        div.header .site-heading h1 a:hover {
+          text-decoration: none;
+          color: white; }
+    div.header .site-heading h3 {
+      width: auto;
+      margin: 0;
+      text-align: left;
+      text-transform: none;
+      color: white; }
   div.header .contact {
     position: relative;
     float: right;
-    margin: 12px;
-    color: black;
+    color: white;
     text-align: right; }
+  div.header.fixedNav {
+    margin-bottom: 34px; }
 
-ul.artistNav {
-  display: block;
+.filterNav {
+  position: relative;
+  height: auto;
   float: left;
-  padding: 0 10px;
-  margin: 20px 0 0 0;
-  font-family: josefinSansItalic; }
-  ul.artistNav li {
-    list-style: none;
-    font-size: 1.4em; }
-    ul.artistNav li a {
-      display: block;
-      color: black;
-      text-decoration: none;
-      text-transform: capitalize;
-      padding: 5px 10px; }
-      ul.artistNav li a.selected {
-        background-color: #006666;
-        font-family: josefinSansSemiBoldItalic;
-        color: white; }
-      ul.artistNav li a:hover {
-        background-color: #222;
-        color: white; }
+  font-family: MateSCRegular;
+  font-size: 1.2em;
+  overflow: hidden;
+  background-color: #fff; }
+  .filterNav a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 5px 10px; }
+    .filterNav a.mobile-menu {
+      background-color: #bbb;
+      opacity: 1; }
+    .filterNav a.selected {
+      background-color: #333;
+      color: white; }
+    .filterNav a:hover {
+      text-decoration: underline; }
+  .filterNav ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; }
+    .filterNav ul li {
+      list-style: none; }
+  .filterNav.fixed {
+    z-index: 1;
+    top: 0px;
+    left: 0px; }
+  .filterNav.open {
+    max-height: 550px; }
 
-div.img-grid-container {
+.biographies {
   width: auto;
   overflow: hidden; }
-  div.img-grid-container .tile {
+  .biographies h2 {
+    padding-bottom: 10px; }
+  .biographies .bio {
+    width: 100%;
+    text-align: justify; }
+
+.img-grid-container {
+  width: auto;
+  overflow: hidden; }
+  .img-grid-container .tile {
     margin: 0;
-    padding: 20px;
     overflow: hidden; }
-    div.img-grid-container .tile a.img-container img {
+    .img-grid-container .tile a.img-container img {
       max-width: 100%;
       min-width: 100%; }
-    div.img-grid-container .tile a.img-container img:hover {
+    .img-grid-container .tile a.img-container img:hover {
       opacity: 0.8; }
-    div.img-grid-container .tile .art-info {
+    .img-grid-container .tile .art-info {
       padding: 5px 0px; }
-      div.img-grid-container .tile .art-info a {
+      .img-grid-container .tile .art-info a {
         text-decoration: none;
         cursor: auto;
         font-size: 1.2em; }
-      div.img-grid-container .tile .art-info .artist {
+      .img-grid-container .tile .art-info .artist {
         font-family: josefinSansSemiBold; }
-      div.img-grid-container .tile .art-info .title {
+      .img-grid-container .tile .art-info .title {
         font-family: josefinSansItalic;
         color: #777; }
 
-#lightcase-overlay {
-  background-color: white !important; }
-
 #lightcase-case {
-  color: black !important;
   text-shadow: none !important; }
 
 .lightcase-caption {
@@ -6621,73 +6653,139 @@ img.artwork-medium {
 @font-face {
   font-family: josefinSansSemiBoldItalic;
   src: url("../fonts/JosefinSans/JosefinSans-SemiBoldItalic.ttf"); }
+@font-face {
+  font-family: MateSCRegular;
+  src: url("../fonts/mate_sc/MateSC-Regular.ttf"); }
 /* 1px and greater */
 @media only screen and (min-width: 1px) {
-  .header h1 {
-    font-size: 1.4em; }
+  .header {
+    margin-bottom: 0; }
+    .header .site-heading h1 {
+      font-size: 2.2em; }
+    .header .site-heading h3 {
+      font-size: 1em;
+      padding: 0 0 10px 20px; }
+    .header .contact {
+      font-size: 1.3em;
+      margin: 10px 20px 10px 0; }
 
-  .contact {
-    font-size: 1.1em; }
+  .filterNav {
+    margin: 0 0 10px 0;
+    padding: 0;
+    float: none;
+    width: 100%;
+    max-height: 2em;
+    -webkit-transition-property: max-height;
+    -moz-transition-property: max-height;
+    transition-property: max-height;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    transition-delay: 0s; }
+    .filterNav.fixed {
+      position: fixed; }
+      .filterNav.fixed div.hr {
+        margin: 0 !important; }
+    .filterNav .mobile-menu {
+      display: block; }
 
-  .tile {
-    width: 49.5%; }
-    .tile .title {
-      font-size: 1.1em; }
-
-  h2.title-desktop {
-    display: none; }
-  h2.title-mobile {
-    display: block; }
-
-  .artistNav {
-    width: 100%; }
+  .biographies .bio {
+    font-size: 1.1em;
+    padding: 0 20px 20px 20px; }
+    .biographies .bio h2 {
+      margin: 20px; }
 
   .img-grid-container {
-    width: 100%; } }
+    width: 100%; }
+    .img-grid-container .tile {
+      width: 49.5%;
+      padding: 10px 20px; }
+      .img-grid-container .tile .title {
+        font-size: 1.1em; } }
 /* 480px and greater */
 @media only screen and (min-width: 480px) {
-  .header h1 {
-    font-size: 2em; }
+  .header {
+    margin-bottom: 10px; }
+    .header .site-heading h1 {
+      font-size: 2em; }
+    .header .site-heading h3 {
+      font-size: 1em; }
 
-  h2.title-desktop {
-    display: block; }
-  h2.title-mobile {
-    display: none; }
+  .filterNav {
+    margin: 10px 0 0 0;
+    padding: 0 10px;
+    width: auto;
+    float: left;
+    max-height: 9999px;
+    -webkit-transition: all none;
+    -moz-transition: all none;
+    transition: all none; }
+    .filterNav.fixed {
+      position: relative; }
+      .filterNav.fixed div.hr {
+        margin: 0 0 20px 0 !important; }
+    .filterNav .mobile-menu {
+      display: none; }
 
-  .contact {
-    font-size: 1.2em; }
-
-  .artistNav {
-    width: auto; }
+  .biographies .bio h2 {
+    margin: 30px; }
 
   .img-grid-container {
-    width: auto; } }
+    width: auto; }
+    .img-grid-container .tile {
+      padding: 10px 30px; } }
 /* 768px and greater */
 @media only screen and (min-width: 768px) {
-  .header h1 {
+  .header .site-heading h1 {
     font-size: 2.6em; }
+  .header .site-heading h3 {
+    font-size: 1.1em;
+    padding: 0 0 20px 20px; }
   .header .contact {
-    font-size: 1.3em; }
+    margin: 20px; }
 
-  .tile {
-    width: 32.5%; }
-    .tile .title {
+  .biographies .bio {
+    font-size: 1.2em; }
+
+  .img-grid-container .tile {
+    width: 32.5%;
+    padding: 10px 30px; }
+    .img-grid-container .tile .title {
       font-size: 1.2em; } }
 /* 992px and greater */
 @media only screen and (min-width: 992px) {
-  .header h1 {
+  .header .site-heading h1 {
     font-size: 3em; }
+  .header .site-heading h3 {
+    font-size: 1.2em; }
 
-  .tile {
-    width: 24.5%; } }
+  .biographies .bio {
+    padding: 0 30px 20px 30px; }
+
+  .img-grid-container .tile {
+    width: 24.5%;
+    padding: 15px 30px; } }
 /* 1200px and greater */
 @media only screen and (min-width: 1200px) {
+  .header .site-heading h1 {
+    font-size: 3.2em; }
+  .header .site-heading h3 {
+    font-size: 1.2em; }
   .header .contact {
     font-size: 1.4em; }
 
-  .tile {
-    width: 24.5%; }
-    .tile .title {
+  .biographies .bio {
+    padding: 0 40px 20px 40px; }
+
+  .img-grid-container .tile {
+    width: 24.5%;
+    padding: 20px 45px; }
+    .img-grid-container .tile .title {
       font-size: 1.3em; } }
 
 /*# sourceMappingURL=main.css.map */

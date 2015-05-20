@@ -14,6 +14,9 @@
 		<th>
 			Year
 		</th>
+		<th> 
+			Medium
+		</th>
 		<th>
 			Description
 		</th>
@@ -40,6 +43,9 @@
 		</td>
 		<td>
 			<?= $row['year'] ?>
+		</td>
+		<td>
+			<?= $row['medium'] ?>
 		</td>
 		<td>
 			<?= substr($row['description'], 0, 30) ?><? if(strlen($row['description']) > 30) : ?>...<? endif; ?>

@@ -19,13 +19,13 @@ html, body {
 }
 
 h2 {
+	font-family: MateSCRegular;
 	text-align: center;
-	text-transform: uppercase;
-	margin: 10px 0 30px 0;
+	margin: 0;
 }
 
 h3 {
-	text-transform: capitalize;
+	font-family: josefinSansLight;
 }
 
 p {
@@ -87,74 +87,126 @@ a.button {
 	}
 }
 
+.hr {
+	border-bottom: 1px solid #aaa;
+	padding: 0 0 20px 0;
+	margin: 0 0 20px 0;
+}
+
+.widthAuto {
+	width: auto !important;
+}
+
 // ======= Header =======
 div.header {
 	height:auto;
-	margin-bottom: 10px;
 	overflow: auto;
-	border-bottom: 2px solid #009999;
-	h1 {
+	@include linear-gradient(#111, #444);
+	//background-color: #333;
+	.site-heading {
 		display: inline-block;
-		width: auto;
-		margin:0px;
-		margin-left:20px;
-		padding: 15px 0;
-		font-family: josefinSansSemiBold;
-		text-align: left;
-		color: black;
-		a {
-			color: black;
-			&:hover {
-				text-decoration: none;
-				color: black;
+		h1 {
+			width: auto;
+			margin: 0 0 0 20px;
+			padding: 10px 0 0 0;
+			font-family: MateSCRegular;
+			text-align: left;
+			color: white;
+			a {
+				color: white;
+				&:hover {
+					text-decoration: none;
+					color: white;
+				}
 			}
+		}
+		h3 {
+			width: auto;
+			margin: 0;
+			text-align: left;
+			text-transform: none;
+			color: white;
 		}
 	}
 	.contact {
 		position:relative;
 		float: right;
-		margin: 12px;
-		color: black;
+		color: white;
 		text-align: right;
+	}
+	// fix for body jumping 34px when mobile nav bar becomes fixed
+	&.fixedNav {
+		margin-bottom: 34px;
 	}
 }
 
+
+
 // ======= Artist Navigation =======
-ul.artistNav {
-	display: block;
+.filterNav {
+	position:relative;
+	height:auto;
 	float:left;
-	padding: 0 10px;
-	margin: 20px 0 0 0;
-	font-family: josefinSansItalic;
-	li {
-		list-style: none;
-		font-size: 1.4em;
-		a {
-			display: block;
-			color: black;
-			text-decoration: none;
-			text-transform: capitalize;
-			padding: 5px 10px;
-			&.selected {
-				background-color: #006666;
-				font-family: josefinSansSemiBoldItalic;
-				color:white;
-			}
-			&:hover {
-				background-color: #222;
-				color: white;
-			}
+	font-family: MateSCRegular;
+	font-size: 1.2em;
+	overflow: hidden;
+	background-color: #fff;
+	a {
+		display: block;
+		color: black;
+		text-decoration: none;
+		text-transform: capitalize;
+		padding: 5px 10px;
+		&.mobile-menu {
+			background-color: #bbb;
+			opacity: 1;
 		}
+		&.selected {
+			background-color: #333;
+			color:white;
+		}
+		&:hover {
+			text-decoration: underline;
+		}
+
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		li {
+			list-style: none;
+		}
+	}
+	&.fixed {
+		z-index:1;
+		top:0px;
+		left:0px;
+	}
+	&.open {
+		max-height: 550px;
+	}
+}
+
+// ======= Biographies ========
+.biographies {
+	width: auto;
+	overflow: hidden;
+	h2 {
+		padding-bottom: 10px;
+	}
+	.bio {
+		width:100%;
+		text-align:justify;
 	}
 }
 
 // ======= Image Grid =======
-div.img-grid-container {
+.img-grid-container {
 	width:auto;
 	overflow: hidden;
 	.tile {
 		margin: 0;
-		padding: 20px;
 		overflow:hidden;
 		a.img-container {
 			img {
@@ -187,11 +239,11 @@ div.img-grid-container {
 // move this to lightcase css files?
 
 #lightcase-overlay {
-	background-color: white !important;
+	//background-color: white !important;
 }
 
 #lightcase-case {
-	color: black !important;
+	//color: black !important;
 	text-shadow: none !important;
 }
 

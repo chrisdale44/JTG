@@ -53,6 +53,9 @@ class Artwork_Controller
         if (!empty($_POST['year'])) {
             $year = $_POST['year'];
         }
+        if (!empty($_POST['medium'])) {
+            $medium = $_POST['medium'];
+        }
         if (!empty($_POST['desc'])) {
             $desc = $_POST['desc'];
         }
@@ -70,7 +73,7 @@ class Artwork_Controller
                 header('Location: index.php?admin&p=artwork&error='.$return);
                 return false;
             }
-            if($artworkModel->insert_artwork($con, $artistId, $title, $year, $desc, $this->file_name_ext)) {
+            if($artworkModel->insert_artwork($con, $artistId, $title, $year, $medium, $desc, $this->file_name_ext)) {
                 // Success
                 header('Location: index.php?admin&p=dash&success=0');
             } else {
@@ -104,7 +107,7 @@ class Artwork_Controller
                 }
 
                 // Update the database record for this artwork
-                if($artworkModel->update_artwork($con, $artistId, $artworkId, $title, $year, $desc, $this->file_name_ext)) {
+                if($artworkModel->update_artwork($con, $artistId, $artworkId, $title, $year, $medium, $desc, $this->file_name_ext)) {
                     // Success
                     header('Location: index.php?admin&p=dash&success=1');
                 } else {
@@ -113,7 +116,7 @@ class Artwork_Controller
                 }
             } else {
                 // Update the database record for this artwork (excluding image filename)
-                if($artworkModel->update_artwork($con, $artistId, $artworkId, $title, $year, $desc)) {
+                if($artworkModel->update_artwork($con, $artistId, $artworkId, $title, $year, $medium, $desc)) {
                     // Success
                     header('Location: index.php?admin&p=dash&success=1');
                 } else {

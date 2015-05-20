@@ -1,14 +1,30 @@
 /* 1200px and greater */
 @media only screen and (min-width: 1200px) {
 	.header {
+		.site-heading {
+			h1 {
+				font-size: 3.2em;
+			}
+			h3 {
+				font-size: 1.2em;
+			}
+		}
 		.contact {
 			font-size:1.4em;
 		}
 	}
-	.tile {
-		width: 24.5%;
-		.title {
-			font-size: 1.3em;
+	.biographies {
+		.bio {
+			padding: 0 40px 20px 40px;
+		}
+	}
+	.img-grid-container {
+		.tile {
+			width: 24.5%;
+			padding: 20px 45px;
+			.title {
+				font-size: 1.3em;
+			}
 		}
 	}
 	

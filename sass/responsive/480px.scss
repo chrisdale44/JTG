@@ -1,26 +1,45 @@
 /* 480px and greater */
 @media only screen and (min-width: 480px) {
 	.header {
-		h1 {
-			font-size: 2em;
+		margin-bottom: 10px;
+		.site-heading {
+			h1 {
+				font-size: 2em;
+			}
+			h3 {
+				font-size: 1em;
+			}
 		}
 	}
-	h2 {
-		&.title-desktop {
-			display: block;
+	.filterNav {
+		margin: 10px 0 0 0;
+		padding: 0 10px;
+		width: auto;
+		float: left;
+		max-height: 9999px;
+		@include transition(all none);
+		&.fixed {
+			position: relative;
+			div.hr {
+				margin: 0 0 20px 0 !important;
+			}
 		}
-		&.title-mobile {
+		.mobile-menu {
 			display: none;
 		}
 	}
-	.contact {
-		font-size:1.2em;
+	.biographies {
+		.bio {
+			h2 {
+				margin: 30px;
+			}
+		}
 	}
-	.artistNav {
-		width: auto;
-	}
-
 	.img-grid-container {
 		width: auto;
+		.tile {
+			padding: 10px 30px;
+		}
 	}
+	
 }

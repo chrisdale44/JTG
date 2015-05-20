@@ -33,6 +33,15 @@
 	</label>
 	<br/>
 
+	<label for="medium">
+		Medium
+	</label>
+	<select id="medium" name="medium">
+		<option value="print">Print</option>
+		<option value="photo">Photo</option>
+	</select>
+	<br/>
+
 	<label for="desc">
 		Description
 	</label>

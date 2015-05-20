@@ -1,10 +1,13 @@
 <!-- Header -->
 <div class="header">
-	<h1>
-		<a href="index.php?public&amp;p=home">
-			Prints'n'Photos.com
-		</a>
-	</h1>
+	<div class='site-heading'>
+		<h1>
+			Prints 'n' Photos .com
+		</h1>
+		<h3>
+			No.1 site for collectors of limited edition etchings, prints and fine art photographs
+		</h3>
+	</div>
 	<div class="contact">
 		<?= $data['contact']['telephone']; ?> </br>
 		<?= $data['contact']['email']; ?>

@@ -14,25 +14,27 @@ class Artwork_Model {
     	return $artworkResult;
     }
 
-    public function insert_artwork($con, $artistId, $title, $year, $desc, $file_name_ext) {
+    public function insert_artwork($con, $artistId, $title, $year, $medium, $desc, $file_name_ext) {
     	$artworkResult = mysqli_query($con, "
     		INSERT INTO art 
     		SET artistId='$artistId', 
     			title='$title',
-    			year='$year', 
+    			year='$year',
+    			medium='$medium',
     			description='$desc',
     			image='$file_name_ext'
     		");
 		return $artworkResult;
     }
 
-    public function update_artwork($con, $artistId, $artworkId, $title, $year, $desc, $file_name_ext = false) {
+    public function update_artwork($con, $artistId, $artworkId, $title, $year, $medium, $desc, $file_name_ext = false) {
     	if($file_name_ext) {
 	    	$artworkResult = mysqli_query($con, "
 	    		UPDATE art 
 		    		SET artistId='$artistId', 
 		    			title='$title',
-		    			year='$year', 
+		    			year='$year',
+		    			medium='$medium',
 		    			description='$desc',
 		    			image='$file_name_ext'
 		    		WHERE artId='$artworkId'
@@ -42,7 +44,8 @@ class Artwork_Model {
 	    	UPDATE art 
 		    		SET artistId='$artistId', 
 		    			title='$title',
-		    			year='$year', 
+		    			year='$year',
+		    			medium='$medium',
 		    			description='$desc'
 		    		WHERE artId='$artworkId'
 	    		");
