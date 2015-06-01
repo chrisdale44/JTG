@@ -6415,9 +6415,6 @@ button.close {
   .hidden-print {
     display: none !important; } }
 /*# sourceMappingURL=bootstrap.css.map */
-/*===================================================================*/
-/*======================= STATIC STYLESHEET =========================*/
-/*===================================================================*/
 * {
   margin: 0px; }
 
@@ -6461,28 +6458,26 @@ img {
 .hide, .hidden {
   display: none; }
 
-a.button {
+.button {
   margin-top: 10px;
-  background-color: #303030;
-  color: white;
-  font-size: 17px;
-  padding: 6px;
-  border: 1px solid white;
-  text-decoration: none; }
-  a.button:hover, a.button:active, a.button:visited {
-    color: white;
-    text-decoration: none; }
-  a.button:hover {
-    background-color: #404040; }
-
-a.button {
+  font-size: 1.2em;
   padding: 6px 12px;
-  color: black !important;
-  background-color: #e0e0e0;
-  border: 1px solid #a0a0a0; }
-  a.button:hover {
-    background-color: #eaeaea;
-    color: black !important; }
+  text-decoration: none; }
+  .button:hover, .button:active, .button:visited {
+    text-decoration: none; }
+  .button.lightGrey {
+    color: black;
+    background-color: #e0e0e0;
+    border: 1px solid #a0a0a0; }
+    .button.lightGrey:hover {
+      background-color: #eaeaea; }
+  .button.darkGrey {
+    font-family: MateSCRegular;
+    background-color: #303030;
+    border: 1px solid white;
+    color: white; }
+    .button.darkGrey:hover {
+      background-color: #404040; }
 
 .hr {
   border-bottom: 1px solid #aaa;
@@ -6492,38 +6487,41 @@ a.button {
 .widthAuto {
   width: auto !important; }
 
-div.header {
+.leftAlign {
+  text-align: left; }
+
+.header {
   height: auto;
   overflow: auto;
   background-color: #111;
   background-image: -webkit-linear-gradient(#111, #444);
   background-image: linear-gradient(#111, #444); }
-  div.header .site-heading {
+  .header .site-heading {
     display: inline-block; }
-    div.header .site-heading h1 {
+    .header .site-heading h1 {
       width: auto;
       margin: 0 0 0 20px;
       padding: 10px 0 0 0;
       font-family: MateSCRegular;
       text-align: left;
       color: white; }
-      div.header .site-heading h1 a {
+      .header .site-heading h1 a {
         color: white; }
-        div.header .site-heading h1 a:hover {
+        .header .site-heading h1 a:hover {
           text-decoration: none;
           color: white; }
-    div.header .site-heading h3 {
+    .header .site-heading h3 {
       width: auto;
       margin: 0;
       text-align: left;
       text-transform: none;
       color: white; }
-  div.header .contact {
+  .header .contact {
     position: relative;
     float: right;
     color: white;
     text-align: right; }
-  div.header.fixedNav {
+  .header.fixedNav {
     margin-bottom: 34px; }
 
 .filterNav {
@@ -6539,27 +6537,36 @@ div.header {
     color: black;
     text-decoration: none;
     text-transform: capitalize;
-    padding: 5px 10px; }
+    padding: 5px 10px;
+    text-decoration: none; }
     .filterNav a.mobile-menu {
       background-color: #bbb;
-      opacity: 1; }
+      opacity: 1;
+      text-decoration: none; }
+      .filterNav a.mobile-menu:after {
+        margin-left: 5px;
+        content: '\25BA'; }
+      .filterNav a.mobile-menu:hover {
+        text-decoration: none; }
     .filterNav a.selected {
       background-color: #333;
       color: white; }
-    .filterNav a:hover {
-      text-decoration: underline; }
   .filterNav ul {
     margin: 0;
     padding: 0;
     overflow: hidden; }
     .filterNav ul li {
       list-style: none; }
+      .filterNav ul li a:hover {
+        text-decoration: underline; }
   .filterNav.fixed {
     z-index: 1;
     top: 0px;
     left: 0px; }
   .filterNav.open {
     max-height: 550px; }
+    .filterNav.open a.mobile-menu:after {
+      content: '\25BC'; }
 
 .biographies {
   width: auto;
@@ -6585,23 +6592,56 @@ div.header {
       padding: 5px 0px; }
       .img-grid-container .tile .art-info a {
         text-decoration: none;
-        cursor: auto;
-        font-size: 1.2em; }
+        cursor: auto; }
       .img-grid-container .tile .art-info .artist {
-        font-family: josefinSansSemiBold; }
+        font-family: MateSCRegular;
+        font-size: 1.2em; }
       .img-grid-container .tile .art-info .title {
         font-family: josefinSansItalic;
-        color: #777; }
+        color: #777;
+        font-size: 1.1em; }
+
+#lightcase-overlay {
+  opacity: 0.95 !important; }
 
 #lightcase-case {
-  text-shadow: none !important; }
+  text-shadow: none !important;
+  width: auto !important; }
 
-.lightcase-caption {
-  font-family: josefinSansSemiBold !important;
-  font-size: 1.5em !important; }
+.lightcase-contentInner {
+  margin: 0 auto; }
 
-.lightcase-contact {
-  font-size: 1.6em !important; }
+.lightcase-caption .leftCol .artist {
+  font-family: MateSCRegular; }
+.lightcase-caption .leftCol .title {
+  font-family: josefinSansItalic !important; }
+.lightcase-caption .leftCol .desc {
+  font-family: josefinSansLight !important; }
+.lightcase-caption .rightCol .contact-title {
+  font-family: MateSCRegular; }
+.lightcase-caption .rightCol .contact-details {
+  font-family: josefinSansLight !important; }
+
+.centerForm {
+  text-align: center; }
+
+.inputWrapper {
+  text-align: right;
+  margin: 10px; }
+
+form {
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 1.2em;
+  font-family: josefinSansLight; }
+  form label {
+    width: auto;
+    text-align: right;
+    font-weight: normal;
+    font-family: josefinSansLight; }
+  form input, form textarea {
+    display: inline-block;
+    font-family: josefinSansLight !important; }
 
 a.logout {
   position: absolute;
@@ -6619,6 +6659,7 @@ img.artwork-medium {
 .tab {
   text-align: center; }
   .tab .admin-table {
+    font-size: 0.9em;
     margin: 20px auto; }
     .tab .admin-table th, .tab .admin-table td {
       border: 1px solid #ccc;
@@ -6661,13 +6702,16 @@ img.artwork-medium {
   .header {
     margin-bottom: 0; }
     .header .site-heading h1 {
-      font-size: 2.2em; }
+      font-size: 2em; }
     .header .site-heading h3 {
       font-size: 1em;
       padding: 0 0 10px 20px; }
     .header .contact {
-      font-size: 1.3em;
+      display: none;
+      font-size: 1.2em;
       margin: 10px 20px 10px 0; }
+    .header.fixedNav {
+      margin-bottom: 34px; }
 
   .filterNav {
     margin: 0 0 10px 0;
@@ -6706,15 +6750,34 @@ img.artwork-medium {
       width: 49.5%;
       padding: 10px 20px; }
       .img-grid-container .tile .title {
-        font-size: 1.1em; } }
+        font-size: 1.1em; }
+
+  .lightcase-caption .leftCol, .lightcase-caption .rightCol {
+    display: block; }
+  .lightcase-caption .leftCol {
+    padding-bottom: 10px; }
+    .lightcase-caption .leftCol .artist {
+      font-size: 1.3em !important; }
+    .lightcase-caption .leftCol .title {
+      font-size: 1.3em !important; }
+    .lightcase-caption .leftCol .desc {
+      font-size: 1em !important; }
+  .lightcase-caption .rightCol .contact-title {
+    font-size: 1.3em !important; }
+  .lightcase-caption .rightCol .contact-details {
+    font-size: 1.1em !important; } }
 /* 480px and greater */
 @media only screen and (min-width: 480px) {
   .header {
     margin-bottom: 10px; }
     .header .site-heading h1 {
-      font-size: 2em; }
+      font-size: 2.2em; }
     .header .site-heading h3 {
       font-size: 1em; }
+    .header .contact {
+      display: block; }
+    .header.fixedNav {
+      margin-bottom: 0; }
 
   .filterNav {
     margin: 10px 0 0 0;
@@ -6738,7 +6801,39 @@ img.artwork-medium {
   .img-grid-container {
     width: auto; }
     .img-grid-container .tile {
-      padding: 10px 30px; } }
+      padding: 10px 30px; }
+
+  .lightcase-caption {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex; }
+    .lightcase-caption .leftCol, .lightcase-caption .rightCol {
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      padding: 0 15px; }
+    .lightcase-caption .leftCol {
+      float: left;
+      text-align: right;
+      border-right: 1px solid white; }
+      .lightcase-caption .leftCol .artist {
+        font-size: 1.6em !important;
+        white-space: nowrap;
+        display: inline-block; }
+      .lightcase-caption .leftCol .title {
+        font-size: 1.6em !important;
+        white-space: nowrap;
+        display: inline-block; }
+      .lightcase-caption .leftCol .desc {
+        font-size: 1.1em !important; }
+    .lightcase-caption .rightCol {
+      float: right;
+      text-align: left; }
+      .lightcase-caption .rightCol .contact-title {
+        font-size: 1.4em !important;
+        white-space: nowrap; }
+      .lightcase-caption .rightCol .contact-details {
+        font-size: 1.2em !important; } }
 /* 768px and greater */
 @media only screen and (min-width: 768px) {
   .header .site-heading h1 {
@@ -6747,7 +6842,8 @@ img.artwork-medium {
     font-size: 1.1em;
     padding: 0 0 20px 20px; }
   .header .contact {
-    margin: 20px; }
+    margin: 20px;
+    font-size: 1.3em; }
 
   .biographies .bio {
     font-size: 1.2em; }

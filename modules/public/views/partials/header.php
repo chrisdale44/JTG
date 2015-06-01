@@ -9,7 +9,7 @@
 		</h3>
 	</div>
 	<div class="contact">
-		<?= $data['contact']['telephone']; ?> </br>
-		<?= $data['contact']['email']; ?>
+		<span id="telephone"><?= $data['contact']['telephone']; ?></span> </br>
+		<span id="email"><?= $data['contact']['email']; ?></span>
 	</div>
 </div>

@@ -1,0 +1,78 @@
+// ADMIN
+
+.centerForm {
+	text-align: center;
+}
+
+.inputWrapper {
+	text-align: right;
+	margin: 10px;
+}
+
+form {
+	display: inline-block;
+	margin: 0 auto;
+	font-size: 1.2em;
+	font-family: josefinSansLight;
+	label {
+		width: auto;
+		text-align: right;
+		font-weight: normal;
+		font-family: josefinSansLight;
+	}
+	input, textarea {
+		display: inline-block;
+		font-family: josefinSansLight !important;
+	}
+}
+
+a.logout {
+	position: absolute;
+	top: 70px;
+	right: 20px;
+}
+
+img {
+	&.artwork-small {
+		max-width: 120px;
+	}
+	&.artwork-medium {
+		max-width: 300px;
+	}
+}
+
+.tabs-nav {
+	background-color: white;
+}
+
+.tab {
+	text-align: center;
+	.admin-table {
+		font-size: 0.9em;
+		margin: 20px auto;
+		th, td {
+			border: 1px solid #ccc;
+			padding: 15px;
+		}
+	}
+}
+
+.error-banner, .success-banner {
+	position: fixed;
+	top:0;
+	height:60px;
+	width:100%;
+	color: black;
+	text-align:center;
+	font-size: 1.25em;
+	line-height: 60px;
+	z-index:1;
+}
+
+.error-banner {
+	background-color: red;
+}
+
+.success-banner {
+	background-color: green;
+}

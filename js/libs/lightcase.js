@@ -73,7 +73,6 @@
 				closeOnOverlayClick : true,
 				title : null,
 				caption : null,
-				contact: null,
 				showTitle : true,
 				showCaption : true,
 				showSequenceInfo : true,
@@ -138,8 +137,7 @@
 					);
 					$case.append(
 						$content = $('<div class="' + lightcase.settings.classPrefix + 'content"></div>'),
-						$info = $('<div class="' + lightcase.settings.classPrefix + 'info"></div>'),
-						$contact = $('<div class="' + lightcase.settings.classPrefix + 'contact-wrapper"></div>')
+						$info = $('<div class="' + lightcase.settings.classPrefix + 'info"></div>')
 					);
 					$content.append(
 						$contentInner = $('<div class="' + lightcase.settings.classPrefix + 'contentInner"></div>')
@@ -147,7 +145,7 @@
 					$info.append(
 						//$sequenceInfo = $('<div class="' + lightcase.settings.classPrefix + 'sequenceInfo"></div>'),
 						$title = $('<h4 class="' + lightcase.settings.classPrefix + 'title"></h4>'),
-						$caption = $('<p class="' + lightcase.settings.classPrefix + 'caption"></p>')
+						$caption = $('<div class="' + lightcase.settings.classPrefix + 'caption"></div>')
 					);
 				},
 				onInit : {},
@@ -176,9 +174,21 @@
 		 	var objectData = {
 				$link : $object,
 				title : lightcase.settings.title || $object.attr('title'),
-				caption : lightcase.settings.caption || $object.children('img').attr('alt'),
-				contact : '<p class="' + lightcase.settings.classPrefix + 'contact">Interested in purchasing a copy of this piece?</p>\
-							Call or email us on the following...',
+				caption : '<div class="leftCol"> \
+								<span class="artist">' + $object.children('.artist').text() + '</span>&nbsp; \
+								<span class="title">' + $object.children('.title').text() + '</span><br/> \
+								<span class="desc">' + $object.children('.desc').html() + '</span> \
+							</div>\
+							<div class="rightCol">\
+								<span class="contact-title">\
+									Interested in purchasing a copy?\
+								</span>\
+								<span class="contact-details"><br/>\
+									Call or email us on the following: <br/>' +
+										$('#telephone').text() + '<br/>' +
+										$('#email').text() +
+								'</span>\
+							</div>',
 				url : lightcase.verifyDataUrl($object.attr('data-href') || $object.attr('href')),
 				requestType : lightcase.settings.ajax.type,
 				requestData : lightcase.settings.ajax.data,
@@ -353,9 +363,6 @@
 				$caption.empty();
 				$caption.hide();
 			}
-			// Add button to the content holder
-			$contact.html(lightcase.objectData.contact);
-			$contact.show();
 		},
 
 		/**
@@ -530,7 +537,13 @@
 			// Adjust margin
 			$case.css({
 				'margin-top' : parseInt(-($case.outerHeight() / 2)),
-				'margin-left' : parseInt(-($case.outerWidth() / 2))
+				'margin-left' : parseInt(-($('#lightcase-case').outerWidth() / 2))
+			});
+
+			// Adjust margin
+			$case.css({
+				'margin-top' : parseInt(-($case.outerHeight() / 2)),
+				'margin-left' : parseInt(-($('#lightcase-case').outerWidth() / 2))
 			});
 		},
 
@@ -599,8 +612,8 @@
 						var suffix = suffixArr[i]
 							,regexp = new RegExp('\.(' + suffix + ')$', 'i')
 							// Verify only the last 4 characters of the string
-							,str = url.split('?')[0].substr(-4);
-
+							//,str = url.split('?')[0].substr(-4);
+							,str = url.substr(url.lastIndexOf('.'));
 						if (regexp.test(str) === true) {
 							return key;
 						} else if (key === 'inline' && (url.indexOf(suffix) > -1 || !url)) {
@@ -1358,6 +1371,7 @@
 				default :
 					lightcase.cleanup();
 			}
+			$(window).trigger('resize');
 		},
 
 		/**

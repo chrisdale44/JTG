@@ -1,11 +1,6 @@
 $(document).ready(function($) {
   'use strict';
 
-  // JS to open/close the filter navigation menu
-  $('.mobile-menu').click(function(){
-    $('.filterNav').toggleClass('open');
-  });
-
   // ==== Sticky mobile nav menu =====
 
   var filterNav = $('.filterNav'),
@@ -31,6 +26,11 @@ $(document).ready(function($) {
       filterNav.toggleClass('fixed', $(window).scrollTop() > navOffsetTop);
       $('.header').toggleClass('fixedNav', $(window).scrollTop() > navOffsetTop);
       getNavOffset();
+  });
+
+  // JS to open/close the filter navigation menu
+  $('.mobile-menu').click(function(){
+    filterNav.toggleClass('open');
   });
 
   // ==== Isotope ====

@@ -8,8 +8,9 @@
 @import "bourbon/bourbon"; // sass mixins
 @import "bootstrap/bootstrap.scss"; // grid
 
-// main stylesheet
-@import "stylesheet.scss";
+// main stylesheets
+@import "public.scss";
+@import "admin.scss";
 
 //fonts stylesheet
 @import "fonts.scss";

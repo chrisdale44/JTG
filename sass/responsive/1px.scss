@@ -4,7 +4,7 @@
 		margin-bottom: 0;
 		.site-heading {
 			h1 {
-				font-size: 2.2em;
+				font-size: 2em;
 			}
 			h3 {
 				font-size: 1em;
@@ -12,8 +12,12 @@
 			}
 		}
 		.contact {
-			font-size: 1.3em;
+			display:none;
+			font-size: 1.2em;
 			margin: 10px 20px 10px 0;
+		}
+		&.fixedNav {
+			margin-bottom: 34px;
 		}
 	}
 	.filterNav {
@@ -53,6 +57,32 @@
 			padding: 10px 20px;
 			.title {
 				font-size: 1.1em
+			}
+		}
+	}
+
+	.lightcase-caption {
+		.leftCol, .rightCol {
+			display: block;
+		}
+		.leftCol {
+			padding-bottom: 10px;
+			.artist {
+				font-size: 1.3em !important;
+			}
+			.title {
+				font-size: 1.3em !important;
+			}
+			.desc {
+				font-size: 1em !important;
+			}
+		}
+		.rightCol {
+			.contact-title {
+				font-size: 1.3em !important;
+			}
+			.contact-details {
+				font-size: 1.1em !important;
 			}
 		}
 	}

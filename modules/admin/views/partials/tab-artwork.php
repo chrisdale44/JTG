@@ -1,4 +1,4 @@
-<a href="index.php?admin&amp;p=artwork" class="button">Add new artwork</a>
+<a href="index.php?admin&amp;p=artwork" class="button darkGrey">Add new artwork</a>
 
 <table class="admin-table">
 	<tr>
@@ -48,7 +48,7 @@
 			<?= $row['medium'] ?>
 		</td>
 		<td>
-			<?= substr($row['description'], 0, 30) ?><? if(strlen($row['description']) > 30) : ?>...<? endif; ?>
+			<?= nl2br($row['description']) ?>
 		</td>
 		<td>
 			<a href="index.php?admin&amp;p=dash&amp;method=toggle&amp;id=<?= $row['artId'] ?>&amp;bool=<?= $row['live'] ?>"><?= $data['bool'][$row['live']] ?></a>

@@ -1,4 +1,4 @@
-<a href="index.php?admin&amp;p=artist" class="button">Add new artist</a>
+<a href="index.php?admin&amp;p=artist" class="button darkGrey">Add new artist</a>
 
 <table class="admin-table">
 	<tr>

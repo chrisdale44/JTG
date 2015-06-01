@@ -1,7 +1,3 @@
-/*===================================================================*/
-/*======================= STATIC STYLESHEET =========================*/
-/*===================================================================*/
-
 * {
 	margin: 0px;
 }
@@ -59,32 +55,31 @@ img {
 	display: none;
 }
 
-a.button {
+.button {
 	margin-top: 10px;
-	background-color: #303030;
-	color: white;
-	font-size: 17px;
-	padding: 6px;
-	border: 1px solid white;
+	font-size: 1.2em;
+	padding: 6px 12px;
 	text-decoration: none;
 	&:hover, &:active, &:visited {
-		color:white;
 		text-decoration: none;
 	}
-	&:hover {
-		background-color: #404040;
+	&.lightGrey {
+		color: black;
+		background-color: #e0e0e0;
+		border: 1px solid #a0a0a0;
+		&:hover {
+			background-color: #eaeaea;
+		}
 	}
-}
-
-a.button {
-	padding: 6px 12px;
-	color: black !important;
-	background-color: #e0e0e0;
-	border: 1px solid #a0a0a0;
-	&:hover {
-		background-color: #eaeaea;
-		color: black !important;
-	}
+	&.darkGrey {
+		font-family: MateSCRegular;
+		background-color: #303030;
+		border: 1px solid white;
+		color: white;
+		&:hover {
+			background-color: #404040;
+		}
+	}	
 }
 
 .hr {
@@ -97,12 +92,15 @@ a.button {
 	width: auto !important;
 }
 
+.leftAlign {
+	text-align: left;
+}
+
 // ======= Header =======
-div.header {
+.header {
 	height:auto;
 	overflow: auto;
 	@include linear-gradient(#111, #444);
-	//background-color: #333;
 	.site-heading {
 		display: inline-block;
 		h1 {
@@ -142,7 +140,7 @@ div.header {
 
 
 
-// ======= Artist Navigation =======
+// ======= Filter Navigation =======
 .filterNav {
 	position:relative;
 	height:auto;
@@ -160,15 +158,20 @@ div.header {
 		&.mobile-menu {
 			background-color: #bbb;
 			opacity: 1;
+			text-decoration: none;
+			&:after {
+				margin-left: 5px;
+				content: '\25BA';
+			}
+			&:hover{
+				text-decoration: none;
+			}
 		}
 		&.selected {
 			background-color: #333;
 			color:white;
 		}
-		&:hover {
-			text-decoration: underline;
-		}
-
+		text-decoration: none;
 	}
 	ul {
 		margin: 0;
@@ -176,6 +179,11 @@ div.header {
 		overflow: hidden;
 		li {
 			list-style: none;
+			a {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
 		}
 	}
 	&.fixed {
@@ -185,6 +193,9 @@ div.header {
 	}
 	&.open {
 		max-height: 550px;
+		a.mobile-menu:after {
+			content: '\25BC';
+		}
 	}
 }
 
@@ -222,88 +233,53 @@ div.header {
 			a {
 				text-decoration: none;
 				cursor: auto;
-				font-size: 1.2em;
 			}
 			.artist {
-				font-family: josefinSansSemiBold;
+				font-family: MateSCRegular;
+				font-size: 1.2em;
 			}
 			.title {
 				font-family: josefinSansItalic;
 				color: #777;
+				font-size: 1.1em;
 			}
 		}
 	}
 }
 
-// Lightcase overrides
-// move this to lightcase css files?
+// Lightcase styling and overrides
 
 #lightcase-overlay {
-	//background-color: white !important;
+	opacity: 0.95 !important;
 }
 
 #lightcase-case {
-	//color: black !important;
 	text-shadow: none !important;
+	width: auto !important;
 }
 
-.lightcase-caption {
-	font-family: josefinSansSemiBold !important;
-	font-size: 1.5em !important;
+.lightcase-contentInner {
+	margin:0 auto;
 }
 
-.lightcase-contact {
-	font-size: 1.6em !important;
-}
-
-// ADMIN
-
-a.logout {
-	position: absolute;
-	top: 70px;
-	right: 20px;
-}
-
-img {
-	&.artwork-small {
-		max-width: 120px;
-	}
-	&.artwork-medium {
-		max-width: 300px;
-	}
-}
-
-.tabs-nav {
-	background-color: white;
-}
-
-.tab {
-	text-align: center;
-	.admin-table {
-		margin: 20px auto;
-		th, td {
-			border: 1px solid #ccc;
-			padding: 15px;		
+	.lightcase-caption {
+		.leftCol {
+			.artist {
+				font-family: MateSCRegular;
+			}
+			.title {
+				font-family: josefinSansItalic !important;
+			}
+			.desc {
+				font-family: josefinSansLight !important;
+			}
+		}
+		.rightCol {
+			.contact-title {
+				font-family: MateSCRegular;
+			}
+			.contact-details {
+				font-family: josefinSansLight !important;
+			}
 		}
 	}
-}
-
-.error-banner, .success-banner {
-	position: fixed;
-	top:0;
-	height:60px;
-	width:100%;
-	color: black;
-	text-align:center;
-	font-size: 1.25em;
-	line-height: 60px;
-	z-index:1;
-}
-
-.error-banner {
-	background-color: red;
-}
-
-.success-banner {
-	background-color: green;
-}

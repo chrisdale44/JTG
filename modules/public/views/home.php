@@ -54,10 +54,13 @@
 			<a href="/images/artwork/<?= $row['image'] ?>" class="img-container" data-rel="lightcase">
 				<img src="/images/artwork/<?= $row['image'] ?>"
 					alt="<?= $row["title"] ?> by <?= $row["forename"] ?> <?= $row["surname"] ?>" />
+				<span class="title hidden"><?= $row['title'] ?></span>
+				<span class="artist hidden"><?= $row['forename'] ?> <?= $row["surname"] ?></span>
+				<span class="desc hidden"><?= nl2br($row['description']) ?></span>
 			</a>
 			<div class="art-info">
 				<a href="javascript:void(0);" class="artist" data-filter=".<?= $row['artistId'] ?>"><?= $row["forename"] ?> <?= $row["surname"] ?></a>
-				<a href="/images/artwork/<?= $row['image'] ?>" class="title" data-rel="lightcase"><?= $row["title"] ?></a>
+				<span class="title"><?= $row["title"] ?></span>
 			</div>
 		</div>
 	<? endwhile; 
