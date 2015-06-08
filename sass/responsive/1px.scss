@@ -25,6 +25,7 @@
 		padding:0;
 		float: none;
 		width: 100%;
+		font-size: 1.1em;
 		max-height: 2em;
 		@include transition-property(max-height);
 		@include transition-duration(0.5s);

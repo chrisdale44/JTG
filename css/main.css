@@ -6529,9 +6529,9 @@ img {
   height: auto;
   float: left;
   font-family: MateSCRegular;
-  font-size: 1.2em;
   overflow: hidden;
-  background-color: #fff; }
+  background-color: #fff;
+  overflow-y: scroll; }
   .filterNav a {
     display: block;
     color: black;
@@ -6718,6 +6718,7 @@ img.artwork-medium {
     padding: 0;
     float: none;
     width: 100%;
+    font-size: 1.1em;
     max-height: 2em;
     -webkit-transition-property: max-height;
     -moz-transition-property: max-height;
@@ -6784,6 +6785,7 @@ img.artwork-medium {
     padding: 0 10px;
     width: auto;
     float: left;
+    font-size: 1.2em;
     max-height: 9999px;
     -webkit-transition: all none;
     -moz-transition: all none;

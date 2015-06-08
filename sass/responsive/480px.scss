@@ -22,6 +22,7 @@
 		padding: 0 10px;
 		width: auto;
 		float: left;
+		font-size: 1.2em;
 		max-height: 9999px;
 		@include transition(all none);
 		&.fixed {

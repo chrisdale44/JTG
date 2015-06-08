@@ -181,10 +181,10 @@
 							</div>\
 							<div class="rightCol">\
 								<span class="contact-title">\
-									Interested in purchasing a copy?\
+									Interested in purchasing this piece?\
 								</span>\
 								<span class="contact-details"><br/>\
-									Call or email us on the following: <br/>' +
+									Then please call or email us: <br/>' +
 										$('#telephone').text() + '<br/>' +
 										$('#email').text() +
 								'</span>\

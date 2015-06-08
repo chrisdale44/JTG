@@ -146,9 +146,9 @@ img {
 	height:auto;
 	float:left;
 	font-family: MateSCRegular;
-	font-size: 1.2em;
 	overflow: hidden;
 	background-color: #fff;
+	overflow-y: scroll;
 	a {
 		display: block;
 		color: black;
