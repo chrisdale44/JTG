@@ -26,5 +26,8 @@ class Home_Controller
         $artists = $homeModel->get_all_artists_names($con);
         $view->assign('artists', $artists);
 
+        //get about paragraph
+        $about = mysqli_fetch_assoc($homeModel->get_about_para($con));
+        $view->assign('about', $about);
     }
 }

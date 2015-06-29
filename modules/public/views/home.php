@@ -28,6 +28,11 @@
 		</li>
 		<? endwhile;
 		endif; ?>
+		<li class="hr-top">
+			<a href="javascript:void(0);" data-filter=".about" class="about">
+				About
+			</a>
+		</li>
 	</ul>
 	<div class="hr"></div>
 </nav>
@@ -43,6 +48,9 @@
 		</div>
 	<? endwhile;
 	endif; ?>
+	<div class="isotopeItem about">
+		<?= $data['about']['about']; ?>
+	</div>
 </div>
 
 <!-- image grid of artwork -->
@@ -56,6 +64,7 @@
 					alt="<?= $row["title"] ?> by <?= $row["forename"] ?> <?= $row["surname"] ?>" />
 				<span class="title hidden"><?= $row['title'] ?></span>
 				<span class="artist hidden"><?= $row['forename'] ?> <?= $row["surname"] ?></span>
+				<span class="year hidden"><?= $row['year'] ?></span>
 				<span class="desc hidden"><?= nl2br($row['description']) ?></span>
 			</a>
 			<div class="art-info">
@@ -66,3 +75,4 @@
 	<? endwhile; 
 	endif; ?>
 </div>
+

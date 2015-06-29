@@ -37,4 +37,13 @@ class Home_Model
             ");
         return $contactResult;
     }
+
+    public function get_about_para($con) {
+        $aboutResult = mysqli_query($con, "
+            SELECT about
+                FROM about
+                WHERE id = '1'
+            ");
+        return $aboutResult;
+    }
 }

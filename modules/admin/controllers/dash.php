@@ -114,7 +114,7 @@ class Dash_Controller
         $dashModel = new Dash_Model;
 
         if (!empty($_POST['about'])) {
-            $about = $_POST['about'];
+            $about = addslashes($_POST['about']);
         } else {
             header('Location: index.php?admin&p=dash&error=2#tab-about');
             return false;

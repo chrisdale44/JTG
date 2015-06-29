@@ -45,7 +45,7 @@ class Artist_Controller
 	    	$forename = $_POST['forename'];
     	}
     	if (!empty($_POST['bio'])) {
-    		$bio = $_POST['bio'];
+    		$bio = addslashes($_POST['bio']);
     	}
 
     	if (isset($getVars['id'])) {

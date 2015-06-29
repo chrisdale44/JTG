@@ -71,6 +71,9 @@ $(document).ready(function($) {
 
     $('.filterNav a').removeClass('selected');
     $('.filterNav a[data-filter="' + filterValue + '"]').addClass('selected');
+    if (filterNav.hasClass('open')) {
+      filterNav.toggleClass('open');
+    }
   });
 
   // init lightcase

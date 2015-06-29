@@ -28,7 +28,7 @@ class Artwork_Controller
         // If we are updating an existing artwork...
         if(isset($getVars['id'])) {
             $view->assign('artworkId', $getVars['id']);
-            // ...Go get its' existing details 
+            // ...Go get its existing details 
             $artwork = mysqli_fetch_assoc($artworkModel->get_artwork($con, $getVars['id']));
             $view->assign('artwork', $artwork);
         }
@@ -45,7 +45,7 @@ class Artwork_Controller
         $artistId = $_POST['artist']; 
         
         if (!empty($_POST['title'])) {
-            $title = $_POST['title'];
+            $title = addslashes($_POST['title']);
         } else {
             header('Location: index.php?admin&p=artwork&error=2');
             return false;
@@ -57,7 +57,7 @@ class Artwork_Controller
             $medium = $_POST['medium'];
         }
         if (!empty($_POST['desc'])) {
-            $desc = $_POST['desc'];
+            $desc = addslashes($_POST['desc']);
         }
 
         // Add new artwork

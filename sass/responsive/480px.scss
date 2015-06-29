@@ -1,5 +1,13 @@
 /* 480px and greater */
 @media only screen and (min-width: 480px) {
+	.hr {
+		padding: 0 0 20px 0;
+		margin: 0 0 20px 0;
+	}
+	.hr-top {
+		padding: 20px 0 0 0;
+		margin: 20px 0 0 0;
+	}
 	.header {
 		margin-bottom: 10px;
 		.site-heading {
@@ -69,7 +77,12 @@
 				display: inline-block;
 			}
 			.title {
-				font-size: 1.6em !important;
+				font-size: 1.4em !important;
+				white-space: nowrap;
+				display: inline-block;
+			}
+			.year {
+				font-size: 1.4em !important;
 				white-space: nowrap;
 				display: inline-block;
 			}

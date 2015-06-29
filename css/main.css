@@ -6480,9 +6480,10 @@ img {
       background-color: #404040; }
 
 .hr {
-  border-bottom: 1px solid #aaa;
-  padding: 0 0 20px 0;
-  margin: 0 0 20px 0; }
+  border-bottom: 1px solid #aaa; }
+
+.hr-top {
+  border-top: 1px solid #aaa; }
 
 .widthAuto {
   width: auto !important; }
@@ -6530,14 +6531,13 @@ img {
   float: left;
   font-family: MateSCRegular;
   overflow: hidden;
-  background-color: #fff;
-  overflow-y: scroll; }
+  background-color: #fff; }
   .filterNav a {
+    padding: 5px 10px;
     display: block;
     color: black;
     text-decoration: none;
     text-transform: capitalize;
-    padding: 5px 10px;
     text-decoration: none; }
     .filterNav a.mobile-menu {
       background-color: #bbb;
@@ -6551,20 +6551,21 @@ img {
     .filterNav a.selected {
       background-color: #333;
       color: white; }
+    .filterNav a:hover {
+      text-decoration: underline; }
   .filterNav ul {
     margin: 0;
     padding: 0;
     overflow: hidden; }
     .filterNav ul li {
       list-style: none; }
-      .filterNav ul li a:hover {
-        text-decoration: underline; }
   .filterNav.fixed {
     z-index: 1;
     top: 0px;
     left: 0px; }
   .filterNav.open {
-    max-height: 550px; }
+    max-height: 550px;
+    overflow-y: scroll; }
     .filterNav.open a.mobile-menu:after {
       content: '\25BC'; }
 
@@ -6699,6 +6700,14 @@ img.artwork-medium {
   src: url("../fonts/mate_sc/MateSC-Regular.ttf"); }
 /* 1px and greater */
 @media only screen and (min-width: 1px) {
+  .hr {
+    padding: 0 0 8px 0;
+    margin: 0 0 8px 0; }
+
+  .hr-top {
+    padding: 8px 0 0 0;
+    margin: 8px 0 0 0; }
+
   .header {
     margin-bottom: 0; }
     .header .site-heading h1 {
@@ -6761,6 +6770,10 @@ img.artwork-medium {
       font-size: 1.3em !important; }
     .lightcase-caption .leftCol .title {
       font-size: 1.3em !important; }
+    .lightcase-caption .leftCol .year {
+      font-size: 1.3em !important;
+      white-space: nowrap;
+      display: inline-block; }
     .lightcase-caption .leftCol .desc {
       font-size: 1em !important; }
   .lightcase-caption .rightCol .contact-title {
@@ -6769,6 +6782,14 @@ img.artwork-medium {
     font-size: 1.1em !important; } }
 /* 480px and greater */
 @media only screen and (min-width: 480px) {
+  .hr {
+    padding: 0 0 20px 0;
+    margin: 0 0 20px 0; }
+
+  .hr-top {
+    padding: 20px 0 0 0;
+    margin: 20px 0 0 0; }
+
   .header {
     margin-bottom: 10px; }
     .header .site-heading h1 {
@@ -6823,7 +6844,11 @@ img.artwork-medium {
         white-space: nowrap;
         display: inline-block; }
       .lightcase-caption .leftCol .title {
-        font-size: 1.6em !important;
+        font-size: 1.4em !important;
+        white-space: nowrap;
+        display: inline-block; }
+      .lightcase-caption .leftCol .year {
+        font-size: 1.4em !important;
         white-space: nowrap;
         display: inline-block; }
       .lightcase-caption .leftCol .desc {

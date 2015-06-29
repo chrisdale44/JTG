@@ -84,8 +84,10 @@ img {
 
 .hr {
 	border-bottom: 1px solid #aaa;
-	padding: 0 0 20px 0;
-	margin: 0 0 20px 0;
+}
+
+.hr-top {
+	border-top: 1px solid #aaa;
 }
 
 .widthAuto {
@@ -148,13 +150,12 @@ img {
 	font-family: MateSCRegular;
 	overflow: hidden;
 	background-color: #fff;
-	overflow-y: scroll;
 	a {
+		padding: 5px 10px;
 		display: block;
 		color: black;
 		text-decoration: none;
 		text-transform: capitalize;
-		padding: 5px 10px;
 		&.mobile-menu {
 			background-color: #bbb;
 			opacity: 1;
@@ -172,6 +173,9 @@ img {
 			color:white;
 		}
 		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 	ul {
 		margin: 0;
@@ -179,11 +183,6 @@ img {
 		overflow: hidden;
 		li {
 			list-style: none;
-			a {
-				&:hover {
-					text-decoration: underline;
-				}
-			}
 		}
 	}
 	&.fixed {
@@ -196,6 +195,7 @@ img {
 		a.mobile-menu:after {
 			content: '\25BC';
 		}
+		overflow-y: scroll;
 	}
 }
 

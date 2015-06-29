@@ -176,7 +176,8 @@
 				title : lightcase.settings.title || $object.attr('title'),
 				caption : '<div class="leftCol"> \
 								<span class="artist">' + $object.children('.artist').text() + '</span>&nbsp; \
-								<span class="title">' + $object.children('.title').text() + '</span><br/> \
+								<span class="title">' + $object.children('.title').text() + '</span><br/>\
+								'+ (($object.children('.year').text()) ? '<span class="year">' + $object.children('.year').html() + '</span><br/>' : '' ) + ' \
 								<span class="desc">' + $object.children('.desc').html() + '</span> \
 							</div>\
 							<div class="rightCol">\
