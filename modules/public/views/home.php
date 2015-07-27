@@ -48,8 +48,9 @@
 		</div>
 	<? endwhile;
 	endif; ?>
-	<div class="isotopeItem about">
-		<?= $data['about']['about']; ?>
+	<div class="isotopeItem about about-para">
+		<h2>About</h2>
+		<p><?= $data['about']['about']; ?></p>
 	</div>
 </div>
 

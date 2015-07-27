@@ -212,6 +212,17 @@ img {
 	}
 }
 
+// ======= About ============
+.about-para {
+	text-align: center;
+	p {
+		max-width: 720px;
+		font-size: 1.2em;
+		text-align:justify;
+		margin: 10px 30px;	
+	}
+}
+
 // ======= Image Grid =======
 .img-grid-container {
 	width:auto;

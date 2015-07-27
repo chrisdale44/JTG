@@ -6578,6 +6578,14 @@ img {
     width: 100%;
     text-align: justify; }
 
+.about-para {
+  text-align: center; }
+  .about-para p {
+    max-width: 720px;
+    font-size: 1.2em;
+    text-align: justify;
+    margin: 10px 30px; }
+
 .img-grid-container {
   width: auto;
   overflow: hidden; }
